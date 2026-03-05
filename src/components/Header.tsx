@@ -39,9 +39,9 @@ export default function Header() {
             <a href="#" className="relative z-50 text-2xl font-[Anton] tracking-wider uppercase text-white">
               SPATZ
             </a>
-            
-            <button 
-              onClick={() => setIsOpen(!isOpen)} 
+
+            <button
+              onClick={() => setIsOpen(!isOpen)}
               className="relative z-50 text-white hover:text-gray-300 transition-colors flex items-center gap-3"
             >
               <span className="hidden md:block text-xs font-bold tracking-[0.2em] uppercase">
@@ -58,10 +58,10 @@ export default function Header() {
       {/* Full screen menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, clipPath: 'circle(0% at 100% 0)' }}
-            animate={{ opacity: 1, clipPath: 'circle(150% at 100% 0)' }}
-            exit={{ opacity: 0, clipPath: 'circle(0% at 100% 0)' }}
+          <motion.div
+            initial={{ y: '-100%' }}
+            animate={{ y: 0 }}
+            exit={{ y: '-100%' }}
             transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
             className="fixed inset-0 z-40 bg-[#111] flex flex-col justify-center px-6 lg:px-24"
           >
@@ -75,8 +75,8 @@ export default function Header() {
                     transition={{ delay: 0.2 + (i * 0.1), duration: 0.5, ease: "easeOut" }}
                     className="overflow-hidden"
                   >
-                    <a 
-                      href={link.href} 
+                    <a
+                      href={link.href}
                       onClick={() => setIsOpen(false)}
                       className="text-5xl md:text-8xl font-[Anton] text-white hover:text-[#F27D26] transition-colors uppercase tracking-tight block w-fit"
                     >
@@ -85,8 +85,8 @@ export default function Header() {
                   </motion.div>
                 ))}
               </nav>
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8, duration: 0.5 }}

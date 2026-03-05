@@ -8,14 +8,14 @@ export default function Footer() {
               SPATZ
             </a>
             <p className="text-gray-500 text-sm">
-              &copy; {new Date().getFullYear()} SPATZ - Agence de marketing SaaS
+              &copy; {new Date().getFullYear()} SPATZ - SaaS Marketing Agency
             </p>
           </div>
-          
+
           <div className="flex flex-wrap justify-center md:justify-end gap-6 text-sm font-bold tracking-widest uppercase text-gray-400">
-            <a href="#" className="hover:text-white transition-colors">Accessibilité</a>
-            <a href="#" className="hover:text-white transition-colors">Mentions légales</a>
-            <a href="#" className="hover:text-white transition-colors">Gestion des cookies</a>
+            <a href="#" className="hover:text-white transition-colors">Accessibility</a>
+            <a href="#" className="hover:text-white transition-colors">Legal Notice</a>
+            <a href="#" className="hover:text-white transition-colors">Cookie Management</a>
           </div>
         </div>
       </div>

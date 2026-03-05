@@ -2,17 +2,17 @@ import { motion } from 'motion/react';
 
 const testimonials = [
   {
-    quote: "Je recommande cette agence chaleureusement. C'est toujours un plaisir de collaborer avec cette équipe.",
+    quote: "I highly recommend this agency. It is always a pleasure to collaborate with this team.",
     author: "Sarah Jenkins",
-    role: "Directrice Générale",
+    role: "General Manager",
   },
   {
-    quote: "Un grand merci à l'équipe de SPATZ qui m'a accompagnée dans la refonte de notre stratégie d'acquisition.",
+    quote: "A big thank you to the SPATZ team who guided me in the overhaul of our acquisition strategy.",
     author: "David Chen",
-    role: "Fondateur",
+    role: "Founder",
   },
   {
-    quote: "Une véritable expertise, une équipe compétente, facilitante et à l'écoute : bref, on recommande !",
+    quote: "Genuine expertise, a competent, facilitating, and attentive team: in short, highly recommended!",
     author: "Elena Rodriguez",
     role: "VP of Marketing",
   }
@@ -24,11 +24,11 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="mb-16 md:mb-24">
           <h2 className="text-4xl md:text-6xl lg:text-8xl font-[Anton] text-white uppercase tracking-tight">
-            LES TÉMOIGNAGES <br className="hidden md:block" />
-            <span className="text-gray-600">DE NOS CLIENTS</span>
+            CLIENT <br className="hidden md:block" />
+            <span className="text-gray-600">TESTIMONIALS</span>
           </h2>
           <p className="mt-8 text-xl md:text-2xl font-light text-gray-400 max-w-2xl leading-relaxed">
-            Un témoignage vaut plus qu'un long discours. Nous donnons la parole à nos clients, 100% authentiques.
+            A testimonial is worth more than a long speech. We give the floor to our clients, 100% authentic.
           </p>
         </div>
 
