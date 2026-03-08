@@ -33,7 +33,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+        <div className="flex flex-col gap-y-16">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -72,20 +72,6 @@ export default function Services() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-24 flex justify-center"
-        >
-          <a href="#contact" className="relative group w-48 h-48 rounded-full border border-black/20 dark:border-white/20 flex items-center justify-center hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-500">
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-center px-4">
-              All our services
-            </span>
-            <div className="absolute inset-0 rounded-full border border-black/10 dark:border-white/10 scale-110 group-hover:scale-100 transition-transform duration-500"></div>
-          </a>
-        </motion.div>
       </div>
     </section>
   );

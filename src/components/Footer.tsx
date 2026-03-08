@@ -5,10 +5,10 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-center md:text-left">
             <a href="#" className="text-2xl font-[Anton] tracking-wider uppercase text-black dark:text-white mb-2 block hover:text-[#F27D26] dark:hover:text-[#F27D26] transition-colors">
-              ELIZA-MARIE SPATZ
+              SPATZ SAAS MARKETING
             </a>
             <p className="text-gray-600 dark:text-gray-500 text-sm transition-colors">
-              &copy; {new Date().getFullYear()} Eliza-Marie Spatz - SaaS Marketing Consultancy
+              &copy; {new Date().getFullYear()} Spatz SaaS Marketing
             </p>
           </div>
 

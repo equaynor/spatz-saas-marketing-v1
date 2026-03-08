@@ -38,7 +38,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex justify-between items-center">
             <a href="#" className="relative z-50 text-2xl font-[Anton] tracking-wider uppercase text-black dark:text-white hover:text-[#F27D26] dark:hover:text-[#F27D26] transition-colors">
-              ELIZA-MARIE SPATZ
+              SPATZ SAAS MARKETING
             </a>
 
             <div className="flex items-center gap-4 z-50">
