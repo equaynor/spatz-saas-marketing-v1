@@ -3,34 +3,33 @@ import { ArrowUpRight } from 'lucide-react';
 
 const services = [
   {
-    title: 'SEO & CONTENT',
-    description: 'Dominate search results with high-intent keywords. We create content that educates, engages, and converts.',
+    title: 'THE GTM FOUNDATION AUDIT',
+    description: '1-Month Project: A comprehensive review of current positioning, messaging, and channels, resulting in a 6-month actionable marketing roadmap for Series A/B stages.',
+    image: '/images/2.png'
   },
   {
-    title: 'PAID ACQUISITION',
-    description: 'Scale your user base profitably with targeted campaigns across Google, LinkedIn, and Meta.',
+    title: 'THE CAMPAIGN ACCELERATOR',
+    description: '3-Month Sprint: End-to-end execution of a specific initiative (ABM campaign, trade show, or webinar series) to drive immediate pipeline velocity.',
+    image: '/images/4.png'
   },
   {
-    title: 'CRO & UX',
-    description: 'Turn more visitors into trials and trials into paying customers through rigorous A/B testing.',
-  },
-  {
-    title: 'MARKETING AUTOMATION',
-    description: 'Nurture leads and reduce churn with personalized, automated email sequences.',
-  },
+    title: 'FRACTIONAL MARKETING LEADERSHIP',
+    description: 'Ongoing Retainer: Strategic guidance, agency/freelancer management, and budget oversight for fast-growing companies not yet ready for a full-time CMO.',
+    image: '/images/6.png'
+  }
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 md:py-32 bg-[#050505] border-t border-white/10">
+    <section id="services" className="py-24 md:py-32 bg-[#fafafa] dark:bg-[#050505] border-t border-black/10 dark:border-white/10 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="mb-16 md:mb-24">
-          <h2 className="text-4xl md:text-6xl lg:text-8xl font-[Anton] text-white uppercase tracking-tight">
-            OUR EXPERTISE <br className="hidden md:block" />
-            <span className="text-gray-600">SPATZ</span>
+          <h2 className="text-4xl md:text-6xl lg:text-8xl font-[Anton] text-black dark:text-white uppercase tracking-tight transition-colors">
+            PRODUCTIZED <br className="hidden md:block" />
+            <span className="text-gray-400 dark:text-gray-600 transition-colors">OFFERINGS</span>
           </h2>
-          <p className="mt-8 text-xl md:text-2xl font-light text-gray-400 max-w-2xl leading-relaxed">
-            At SPATZ, creative elegance and performance drive every project. Specialists in SaaS marketing strategy.
+          <p className="mt-8 text-xl md:text-2xl font-light text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed transition-colors">
+            Clear timelines, precise deliverables, and scalable growth for Series A/B SaaS companies.
           </p>
         </div>
 
@@ -42,34 +41,49 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group cursor-pointer border-t border-white/20 pt-8"
+              className="group cursor-pointer border-t border-black/20 dark:border-white/20 pt-8 pb-8 px-4 -mx-4 relative overflow-hidden transition-colors hover:bg-[#F27D26]/5 dark:hover:bg-[#F27D26]/10"
             >
-              <div className="flex justify-between items-start mb-6">
-                <h3 className="text-3xl md:text-4xl font-[Anton] text-white uppercase tracking-wide group-hover:text-[#F27D26] transition-colors">
-                  {service.title}
-                </h3>
-                <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300 transform group-hover:rotate-45">
-                  <ArrowUpRight className="w-5 h-5" />
-                </div>
+              {/* The Orange Gradient Effect (from 21st.dev) */}
+              <div className="pointer-events-none absolute inset-0 z-30 bg-gradient-to-tl from-[#F27D26]/20 via-transparent to-transparent opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100" />
+
+              {/* Background image reveal on hover */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0">
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/40 dark:from-[#050505] dark:via-[#050505]/80 dark:to-[#050505]/40 z-10 transition-colors duration-300" />
+                <img
+                  src={service.image}
+                  alt=""
+                  className="w-full h-full object-cover grayscale opacity-30 mix-blend-luminosity scale-105 group-hover:scale-100 transition-transform duration-1000"
+                />
               </div>
-              <p className="text-lg text-gray-400 font-light leading-relaxed">
-                {service.description}
-              </p>
+
+              <div className="relative z-20">
+                <div className="flex justify-between items-start mb-6">
+                  <h3 className="text-3xl md:text-4xl font-[Anton] text-black dark:text-white uppercase tracking-wide group-hover:text-[#F27D26] dark:group-hover:text-[#F27D26] transition-colors">
+                    {service.title}
+                  </h3>
+                  <div className="w-10 h-10 rounded-full border border-black/20 dark:border-white/20 flex items-center justify-center group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all duration-300 transform group-hover:rotate-45">
+                    <ArrowUpRight className="w-5 h-5" />
+                  </div>
+                </div>
+                <p className="text-lg text-gray-600 dark:text-gray-400 font-light leading-relaxed group-hover:text-black dark:group-hover:text-gray-200 transition-colors duration-300">
+                  {service.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="mt-24 flex justify-center"
         >
-          <a href="#contact" className="relative group w-48 h-48 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-500">
+          <a href="#contact" className="relative group w-48 h-48 rounded-full border border-black/20 dark:border-white/20 flex items-center justify-center hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-500">
             <span className="text-xs font-bold tracking-[0.2em] uppercase text-center px-4">
               All our services
             </span>
-            <div className="absolute inset-0 rounded-full border border-white/10 scale-110 group-hover:scale-100 transition-transform duration-500"></div>
+            <div className="absolute inset-0 rounded-full border border-black/10 dark:border-white/10 scale-110 group-hover:scale-100 transition-transform duration-500"></div>
           </a>
         </motion.div>
       </div>

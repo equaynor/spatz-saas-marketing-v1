@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,31 +27,34 @@ export default function Header() {
   const navLinks = [
     { name: 'HOME', href: '#' },
     { name: 'SERVICES', href: '#services' },
-    { name: 'PROCESS', href: '#process' },
-    { name: 'WORK', href: '#results' },
+    { name: 'ABOUT', href: '#process' },
+    { name: 'RESULTS', href: '#results' },
     { name: 'CONTACT', href: '#contact' },
   ];
 
   return (
     <>
-      <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#050505]/90 backdrop-blur-md py-4' : 'bg-transparent py-6'}`}>
+      <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 dark:bg-[#050505]/90 backdrop-blur-md py-4 shadow-sm dark:shadow-none' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex justify-between items-center">
-            <a href="#" className="relative z-50 text-2xl font-[Anton] tracking-wider uppercase text-white">
-              SPATZ
+            <a href="#" className="relative z-50 text-2xl font-[Anton] tracking-wider uppercase text-black dark:text-white hover:text-[#F27D26] dark:hover:text-[#F27D26] transition-colors">
+              ELIZA-MARIE SPATZ
             </a>
 
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="relative z-50 text-white hover:text-gray-300 transition-colors flex items-center gap-3"
-            >
-              <span className="hidden md:block text-xs font-bold tracking-[0.2em] uppercase">
-                {isOpen ? 'Close' : 'Menu'}
-              </span>
-              <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center bg-white/5 backdrop-blur-sm">
-                {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </div>
-            </button>
+            <div className="flex items-center gap-4 z-50">
+              <ThemeToggle />
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors flex items-center gap-3"
+              >
+                <span className="hidden md:block text-xs font-bold tracking-[0.2em] uppercase">
+                  {isOpen ? 'Close' : 'Menu'}
+                </span>
+                <div className="w-10 h-10 rounded-full border border-black/20 dark:border-white/20 flex items-center justify-center bg-black/5 dark:bg-white/5 backdrop-blur-sm">
+                  {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -63,7 +67,7 @@ export default function Header() {
             animate={{ y: 0 }}
             exit={{ y: '-100%' }}
             transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-40 bg-[#111] flex flex-col justify-center px-6 lg:px-24"
+            className="fixed inset-0 z-40 bg-[#fafafa] dark:bg-[#111] flex flex-col justify-center px-6 lg:px-24"
           >
             <div className="max-w-7xl w-full mx-auto">
               <nav className="flex flex-col space-y-4 md:space-y-8">
@@ -78,7 +82,7 @@ export default function Header() {
                     <a
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="text-5xl md:text-8xl font-[Anton] text-white hover:text-[#F27D26] transition-colors uppercase tracking-tight block w-fit"
+                      className="text-5xl md:text-8xl font-[Anton] text-black dark:text-white hover:text-[#F27D26] dark:hover:text-[#F27D26] transition-colors uppercase tracking-tight block w-fit"
                     >
                       {link.name}
                     </a>
@@ -90,17 +94,17 @@ export default function Header() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
-                className="mt-16 md:mt-24 flex flex-col md:flex-row gap-8 md:gap-24 text-sm font-medium tracking-widest uppercase text-gray-400"
+                className="mt-16 md:mt-24 flex flex-col md:flex-row gap-8 md:gap-24 text-sm font-medium tracking-widest uppercase text-gray-500 dark:text-gray-400"
               >
                 <div>
-                  <p className="text-white mb-2">Email</p>
-                  <a href="mailto:hello@spatz.com" className="hover:text-white transition-colors">hello@spatz.com</a>
+                  <p className="text-black dark:text-white mb-2">Email</p>
+                  <a href="mailto:hello@spatz.com" className="hover:text-black dark:hover:text-white transition-colors">hello@spatz.com</a>
                 </div>
                 <div>
-                  <p className="text-white mb-2">Social</p>
+                  <p className="text-black dark:text-white mb-2">Social</p>
                   <div className="flex gap-4">
-                    <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
-                    <a href="#" className="hover:text-white transition-colors">Instagram</a>
+                    <a href="#" className="hover:text-black dark:hover:text-white transition-colors">LinkedIn</a>
+                    <a href="#" className="hover:text-black dark:hover:text-white transition-colors">Instagram</a>
                   </div>
                 </div>
               </motion.div>
